@@ -30,6 +30,7 @@ def g(df):
         if df.loc[i, 'Documento'].startswith('NC') or df.loc[i, 'Documento'].startswith('CF'):
             df.loc[i, 'Débito'] -= df.loc[i, 'Crédito']
     return df
+    pass
                  
 # Streamlit app
 def main():
