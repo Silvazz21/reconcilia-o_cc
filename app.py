@@ -23,6 +23,13 @@ def find_combinations(numbers, target, tolerance=0.01):
     return result
   except ValueError:
     return None
+
+
+def g(df):
+    for i in range(len(dataframe)):
+        if df.loc[i, 'Documento'].startswith('NC') or df.loc[i, 'Documento'].startswith('CF'):
+            df.loc[i, 'Débito'] -= df.loc[i, 'Crédito']
+    return df
                  
 # Streamlit app
 def main():
@@ -34,12 +41,6 @@ def main():
                                  
     if uploaded_file is not None:
         df = pd.read_excel(uploaded_file)
-
-def g(df):
-    for i in range(len(dataframe)):
-        if df.loc[i, 'Documento'].startswith('NC') or df.loc[i, 'Documento'].startswith('CF'):
-            df.loc[i, 'Débito'] -= df.loc[i, 'Crédito']
-    return df
     
     df = g(df.copy())
     
