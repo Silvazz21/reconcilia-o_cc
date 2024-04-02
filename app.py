@@ -37,7 +37,7 @@ def main():
     st.title("Streamlit App")
 
 # File uploader
-    uploaded_file = st.file_uploader("Upload an Excel file", type="xlsx")
+    uploaded_file = st.file_uploader("Upload do ficheiro da conta corrente em formato xlsx", type="xlsx")
                                  
                                  
     if uploaded_file is not None:
