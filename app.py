@@ -12,14 +12,6 @@ def g(df):
             df.loc[i, 'Débito'] -= df.loc[i, 'Crédito']
     return df
 
-df = g(df.copy())
-df_sorted = df.sort_values(by=['Data', 'Documento'], ascending=[True, False])
-
-df_sorted['Marca'] = 0
-
-df_sorted['Crédito'] = df_sorted['Crédito'].apply(lambda x: float(Decimal(str(x))) if not pd.isnull(x) else None)
-df_sorted['Débito'] = df_sorted['Débito'].apply(lambda x: float(Decimal(str(x))) if not pd.isnull(x) else None)
-
 
 # Function to find combinations that sum up to the target
 def find_combinations(numbers, target, tolerance=0.01):
@@ -47,6 +39,8 @@ def main():
     if uploaded_file is not None:
         df = pd.read_excel(uploaded_file)
 
+
+    df = g(df.copy())
     
     # Display the original DataFrame
     st.subheader("Original DataFrame")
@@ -93,4 +87,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
