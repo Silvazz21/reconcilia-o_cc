@@ -41,8 +41,11 @@ def main():
                                  
     if uploaded_file is not None:
         df = pd.read_excel(uploaded_file)
-    
-    df = g(df.copy())
+    try:
+        df = g(df.copy())
+    except UnboundLocalError as e:
+        # Log the error or handle it as appropriate
+        print("Error occurred in function g:", e)
     
     # Sort DataFrame
     df_sorted = df.sort_values(by=['Data', 'Documento'], ascending=[True, False])
