@@ -26,7 +26,7 @@ def find_combinations(numbers, target, tolerance=0.01):
 
 
 def g(df):
-    for i in range(len(dataframe)):
+    for i in range(len(df)):
         if df.loc[i, 'Documento'].startswith('NC') or df.loc[i, 'Documento'].startswith('CF'):
             df.loc[i, 'Débito'] -= df.loc[i, 'Crédito']
     return df
