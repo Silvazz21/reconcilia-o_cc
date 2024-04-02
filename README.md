@@ -1,2 +1,2 @@
-# reconcilia-o_cc
+# Reconciliação automática de contas correntes 
 Reconciliação de contas correntes
