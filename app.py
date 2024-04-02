@@ -42,10 +42,6 @@ def main():
 
     df = g(df.copy())
     
-    # Display the original DataFrame
-    st.subheader("Original DataFrame")
-    st.write(df)
-
     # Sort DataFrame
     df_sorted = df.sort_values(by=['Data', 'Documento'], ascending=[True, False])
 
@@ -82,7 +78,7 @@ def main():
                         break
 
     # Display the sorted and marked DataFrame
-    st.subheader("Sorted and Marked DataFrame")
+    st.subheader("Conta corrente reconciliada")
     st.write(df_sorted)
 
 if __name__ == "__main__":
